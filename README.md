@@ -33,7 +33,7 @@ Contribuindo
 ============
 ***
 
-Para contribuir com o talkworking é necessário fazer o clone do repositório, e enviar um e-mail para leonardo.prg@gmail.com,
+Para contribuir com o talkworking é necessário criar um fork do repositório, e enviar um e-mail para leonardo.prg@gmail.com,
 
 isto é necessário pois as tarefas do projeto estão cadastradas no próprio talkworing, e é preciso adicionar o acesso ao projeto talkworking.
 
