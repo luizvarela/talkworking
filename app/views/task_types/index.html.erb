@@ -1,0 +1,28 @@
+<h1><%= I18n.t("tasktypes.labels.listing")%></h1>
+
+<table class="table index-task-type-table">
+  <thead>	
+  	<tr>
+	    <th><%=I18n.t("tasktypes.fields.title")%></th>
+	    <th><%=I18n.t("tasktypes.fields.color")%></th>
+		<th><%=I18n.t("tasktypes.fields.total_tasks")%></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+  </thead>
+	<tbody>
+		<% @task_types.each do |task_type| %>
+		  <tr>
+		    <td><%= task_type.title %></td>
+		    <td><%= task_type.color %></td>
+			<td style='width:100px;'><%= task_type.tasks.count %> <%=I18n.t("tasktypes.fields.tasks")%></td>
+			<td style='width:20px;'>
+				<%=link_to image_tag("/table_edit.png", :style => 'width:26px;'), edit_project_task_type_path(@project, task_type)%>
+			</td>
+			<td style='width:20px;'>
+				<%=link_to image_tag("/table_delete.png", :style => 'width:26px;'), project_task_type_path(@project, task_type), :method => :delete%>
+			</td>
+		  </tr>
+		<% end %>
+	</tbody>
+</table>

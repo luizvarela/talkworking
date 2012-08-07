@@ -1,0 +1,17 @@
+	<h1><%= I18n.t("users.labels.new")%></h1>
+	<hr />
+	<%= form_for(@user, :remote => true) do |f| %>
+
+	<%= content_tag(:div, content_tag(:span,  @user.errors.full_messages.to_sentence, :id => 'user-errors-message'), :class => 'alert alert-error hide', :id => 'user-errors-div')%>
+
+	  <div class="field">
+	    <%= f.text_field :email, :placeholder => I18n.t("users.fields.email"), :style => 'width:350px;' %>
+	  </div>
+	  <div class="field">
+	    <%= f.password_field :password, :placeholder => I18n.t("users.fields.password"), :style => 'width:350px;' %>
+	  </div>
+	  <div class="form-actions">
+	    <%= f.submit I18n.t("users.fields.save"), :class => 'btn btn-primary'%>
+	    <%= content_tag :button, I18n.t("columns.fields.cancel"), :class => 'btn btn-info', :onclick => "$('#modalPage').modal('hide');return false;" %>
+	  </div>
+	<% end %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+talkworking:
+  title: talkworking
+  description: good projects
+  active: 1
+
+tasks:
+  title: tasks project
+  description: good projects
+  active: 1

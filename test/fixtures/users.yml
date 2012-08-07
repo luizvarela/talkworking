@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+jef:
+  name: Jef
+  email: jef@jef.com
+  hashed_password: 35675e68f4b5af7b995d9205ad0fc43842f16450
+  birthday: 2012-05-01
+
+leonardo:
+  name: Leonardo
+  email: leo@leo.com
+  hashed_password: 35675e68f4b5af7b995d9205ad0fc43842f16450
+  birthday: 2012-05-01

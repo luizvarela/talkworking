@@ -1,0 +1,86 @@
+<script type='text/javascript'>
+	$(document).ready(function() {
+		$(".task").draggable();
+		$( ".column" ).droppable({
+			drop: function( event, ui ) {
+				if ($(this).attr('id') != ui.draggable.attr('column-id-data')) {
+					$.ajax({
+					  url: '<%=addtask_path%>/' + $(this).attr('id') + '/' + ui.draggable.attr('id') + '/' + <%=@project.id%>
+					});
+				}
+			 }
+		});
+	});
+</script>
+
+<%= content_tag(:div, content_tag(:span, nil, :id => 'error-kanban-span'), :class => 'alert alert-error hide', :align =>'center')%>
+
+<%= content_tag(:div, content_tag(:span, flash[:notice], :id => 'notice-kanban-span'), :class => 'alert alert-info', :align =>'center') if flash[:notice].present?%>
+
+<% if !@task_list.nil? %>
+
+	<ul class="nav nav-pills">
+		<li class="dropdown">
+		  <a href="#" data-toggle="dropdown" class="dropdown-toggle"> <%=@task_list.name%> <b class="caret"></b></a>
+		  <ul class="dropdown-menu" id="menu2">
+		  	<% @project.task_lists.where("id != #{@task_list.id}").each do |task_list| %>
+			    <li>
+			    	<%= link_to task_list.name, kanban_path(@project, :task_list_id => task_list.id) %>
+			    </li>
+		    <% end %>
+		  </ul>
+		</li>
+
+		<li class="dropdown">
+		  <a href="#" data-toggle="dropdown" class="dropdown-toggle"> <%= @user.nil? ? I18n.t("projects.all_users") : @user.email%> 
+		  	<b class="caret"></b>
+		  </a>
+		  <ul class="dropdown-menu" id="menu2">
+		  	<%= content_tag(:li, link_to( I18n.t("projects.all_users"),  kanban_path(@project, :task_list_id => @task_list.id))) if !@user.nil?%>
+		  	<% @project.users.where("#{@user.nil? ? '1=1' : 'id !=' + @user.id.to_s}").each do |user| %>
+			    <li>
+			    	<%= link_to user.email, kanban_path(@project, :task_list_id => @task_list.id, :user_id => user.id) %>
+			    </li>
+		    <% end %>
+		  </ul>
+		</li>
+
+		<div class='new-task'>
+			<%= link_to content_tag(:i, nil, :class=>'icon-plus-sign'), new_project_task_list_task_path(@project, @task_list), :remote => true %>
+		</div>
+
+	</ul>
+<% end %>
+
+<hr/>
+
+<% @project.columns.order('"order"').each do |column| %>
+	<div class='column' id='<%=column.id%>' style='width:<%=100/@project.columns.count%>%'>
+		<div align='center'>
+			<h3><%=column.title%></h3>
+		</div>
+		<hr/>
+		<div style='background-color:<%=column.color%>;' class='main'>
+			<% if !@task_list.nil?%>
+			 <% @task_list.tasks.where("column_id = #{column.id} and #{@user.nil? ? '1=1' : 'user_id = ' + @user.id.to_s }").each do |task|%>
+					<div class='task' column-id-data='<%=task.column.id%>' id='<%=task.id%>' style='border:1px solid <%=task.task_type.color%>' >
+						<div class='task-type' style='background-color:<%=task.task_type.color%>;'></div>
+						<div class='task-body'>
+							<div class='task-title' >
+								<%=format_string_with_reluctance task.title, 9%>
+								<span style='float:right'>
+									<%= link_to content_tag(:i, nil, :class=>'icon-pencil'), edit_project_task_list_task_path(@project, @task_list, task), :remote => true%>
+									<span><i class='icon-eye-open' style='cursor:default;' data-original-title='<%=task.title%>'data-content='<%=task.body%>'></i><span>
+								</span>
+							</div>
+							<div class='task-body'>
+								<%= format_string_with_new_line task.body%>
+							</div>
+						</div>
+					</div>
+				 <% end %>
+			 <% end %>
+		</div>
+	</div>
+<% end %>
+<div class="modal hide fade" id="modalPage" style='padding:10px;'></div>

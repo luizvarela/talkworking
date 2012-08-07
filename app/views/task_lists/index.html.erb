@@ -1,0 +1,28 @@
+<h1><%= I18n.t("tasklist.labels.listing")%></h1>
+
+<table class="table index-task-list-div-main">
+  <thead>
+  	<tr>
+	    <th><%=I18n.t("tasklist.fields.name")%></th>
+	    <th><%=I18n.t("tasklist.fields.description")%></th>
+	    <th><%=I18n.t("tasklist.fields.end_date")%></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+  </thead>
+	<tbody>
+		<% @task_lists.each do |task_list| %>
+		  <tr>
+		    <td><%= task_list.name %></td>
+		    <td><%= task_list.description %></td>
+		    <td style='width:200px;'><%= task_list.end_date %></td>
+			<td style='width:20px;'>
+				<i class="icon-pencil" style='margin-left:5px;cursor:pointer;'></i>
+			</td>
+			<td style='width:20px;'>
+				<i class="icon-remove" style='margin-left:5px;cursor:pointer;'></i>
+			</td>
+		  </tr>
+		<% end %>
+	</tbody>
+</table>

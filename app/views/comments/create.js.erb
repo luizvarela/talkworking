@@ -1,0 +1,3 @@
+$('#comentarios').prepend('<%= escape_javascript(render("comment", :comment => @comment))%>');
+$('#novo_comentario').children().slideUp();
+$('#new_comment').reset();

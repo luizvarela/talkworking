@@ -1,0 +1,130 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  notifier:
+    welcome:
+      message: Hi
+      subject: Welcome to Talkworking
+  hello: "Hello world"
+  tasks:
+    labels:
+      listing: Listing Tasks
+      new: New Tasks
+      title: Title
+      edit: Editing task
+    fields:
+      cancel: Cancel and back
+      save: Save task
+      title: Title
+      body: Body
+      task_list: Taks List
+      column: Column
+      user: User
+  tasktypes:
+      labels:
+          new: New Task Type
+          listing: Listing Task types
+          edit: Editing Task types
+      fields:
+          title: Title
+          color: Color
+          total_tasks: Total of tasks
+          save: Save Task types
+          tasks: Task(s)
+          cancel: Cancel and back
+      defaults:
+          new_feature: New Feature
+          bug: Bug
+  columns:
+      labels:
+          title: Columns
+          new: New Column
+          edit: Editing Column
+          listing: Listing columns
+          view_all: View all Columns
+      fields:
+          title: Title
+          color: Color
+          save: Save Column
+          total_tasks: Total os tasks
+          tasks: Task(s)
+          cancel: Cancel and back
+      defaults:
+          todo: TODO
+          doing: DOING
+          done: Done
+      lists:
+          is_a: is a
+          scheduled_to: scheduled to
+          current_task_list: and your current task list is
+  tasklist:
+      labels:
+          new: New task list
+          title: Task Lists
+          listing: Listing task lists
+          edit: Editing task list
+          view_all: View all Task lists
+          new_task: Click here to add new task to this task list
+      fields:
+          name: Name
+          description: Description
+          end_date: Scheduled for completion
+          save: Save task list
+          cancel: Cancel and back
+      lists:
+        is_a: is a
+        scheduled_to: agendado para
+        current_status: and you current status is
+      breadcrumbs:
+        show: Showing task list
+  users:
+      fields:
+          profile: My Profile
+  system:
+      messages:
+          access_denied: Access denied
+      fields:
+          logout: Logout
+          view_all: View all
+      menus:
+          projects: Projects 
+  projects:
+    new_project: New Project
+    edit: Editing project
+    kanban: Kanban
+    breadcrumbs:
+      index: My projects
+      show: Showing project
+      kanban: Kanban board
+    labels:
+        invite: Invite yours friends
+        welcome: Welcome
+    fields:
+      new: New Project
+      title: Title
+      description: Description
+      email: E-mail
+      save: Save Project
+      count_users: User(s)
+      columns_count: Column(s)
+      task_lists_count: Task list(s)
+      edit_project: Edit Project
+      write_here: Write Here
+      save_project: Save Project
+      task_count: Task(s)
+    texts:
+        start: Start creating a task list. Task list 
+  sessions:
+    fields:
+      login: Login
+      logout: Logout
+      email: E-mail
+      password: Password
+      not_registered: I am not registered
+    messages:
+      login_successfully: Login Successfully
+      login_error: Invalid login/password confirmation
+  date:
+    format:
+      datepicker: "mm/dd/yy"

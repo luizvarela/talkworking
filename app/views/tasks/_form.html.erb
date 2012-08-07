@@ -1,0 +1,24 @@
+<%= form_for([@project,@task_list, @task], :remote => true) do |f| %>
+	
+	<%= content_tag(:div, content_tag(:span,  @task_list.errors.full_messages.to_sentence, :id => 'task-errors-message'), :class => 'alert alert-error hide', :id => 'task-errors-div')%>
+	
+  <div class="field">
+	<%= f.text_field :title, :placeholder => 'Title', :style => 'width:350px;' %>
+  </div>
+  <div class="field">
+    <%= datepicker_tag :task, :end, {:size => 10, :placeholder => I18n.t("tasklist.fields.end_date"), :value => (@task.end.present? ? I18n.l(@task.end) : I18n.l(@task_list.end_date))}, :minDate => 0,:maxDate => (@task_list.end_date - Time.now.to_date).to_i ,:dateFormat  => "\"#{I18n.t('date.formats.datepicker')}\""%>
+  </div>
+  <div class="field">
+    <%= f.collection_select(:user_id, @project.users.order(:email), :id, :email, {:prompt => "Select a User"}, {:style => 'width:220px;', :value => @task.user}) %>
+  </div>
+   <div class="field">
+    <%= f.collection_select(:task_type_id, @project.task_types.order(:title), :id, :title, {:prompt => "Select a Task Type"}, {:style => 'width:220px;', :value => @task.task_type}) %>
+  </div>
+  <div class="field">
+    <%= f.text_area :body, :rows => 5, :placeholder => 'Body', :style => 'width:350px;'  %>
+  </div>
+  <div class="form-actions">
+    <%= f.submit I18n.t("tasks.fields.save"), :class => 'btn btn-primary'%>
+    <%= content_tag :button, I18n.t("tasks.fields.cancel"), :class => 'btn btn-info', :onclick => "$('#modalPage').modal('hide');return false;" %>
+  </div>
+<% end %>

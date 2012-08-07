@@ -1,0 +1,39 @@
+<%= content_tag(:div, content_tag(:span, flash[:error], :id => 'error-project-span'), :class => 'alert alert-error hide', :id => 'error-project-div') %>
+<%= content_tag(:div, content_tag(:span, flash[:error], :id => 'info-project-span'), :class => 'alert alert-info hide', :id => 'info-project-div') %>
+
+<div class='show'>
+	<div id="project-title-div" onmousemove='$("#edit-project-link").show()' onmouseout='$("#edit-project-link").hide()'>
+		<%=render 'title' %>
+	</div>
+
+	<div class='edit'>
+		<div id='project-description-div'>
+			<%=@project.description%>
+		</div>
+
+		<div id="edit-project-div" class="edit-form">
+			<%= form_for @project, :remote => true do  |f| %>
+	   		    <div class="field">
+					<%= f.text_field :title, :placeholder => I18n.t("projects.fields.title")%>
+					<%= link_to content_tag(:i, nil, :class=>'icon-ok'), '#', :onclick => '$(".edit_project").submit();', :id => 'save-project-link'%>
+				</div>
+				<div class="field">
+					<%= f.text_area :description, :rows => 3, :placeholder => I18n.t("projects.fields.write_here"), :style => 'width:100%;'  %>
+				</div>
+			<% end %>
+		</div>
+
+	</div>
+<hr />	
+	<div id ='lists'>
+		<%if @project.task_lists.empty?%>
+			<%=render 'empty_project'%>
+		<%else%>
+			<%=render 'lists'%>
+		<%end%>
+	</div>
+	<%=render 'users/invite'%>
+
+	<div class="modal hide fade" id="modalPage" style='padding:10px;'></div>
+</div>
+

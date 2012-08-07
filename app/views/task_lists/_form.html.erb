@@ -1,0 +1,18 @@
+<%= form_for([@project,@task_list], :remote => true) do |f| %>
+
+	<%= content_tag(:div, content_tag(:span,  @task_list.errors.full_messages.to_sentence, :id => 'task-list-errors-message'), :class => 'alert alert-error hide', :id => 'task-list-errors-div')%>
+
+  <div class="field">
+    <%= f.text_field :name, :placeholder => I18n.t("tasklist.fields.name"), :style => 'width:350px;' %>
+  </div>
+  <div class="field">
+    <%= f.text_area :description, :rows => 5, :placeholder => I18n.t("tasklist.fields.description"), :style => 'width:350px;'  %>
+  </div>
+  <div class="field">
+    <%= datepicker_tag :task_list, :end_date, {:size => 10, :placeholder => I18n.t("tasklist.fields.end_date"), :value => (I18n.l(@task_list.end_date) if @task_list.end_date.present?)}, :minDate => 0, :dateFormat  => "\"#{I18n.t('date.formats.datepicker')}\""%>
+  </div>
+  <div class="form-actions">
+    <%= f.submit I18n.t("tasklist.fields.save"), :class => 'btn btn-primary'%>
+    <%= content_tag :button, I18n.t("tasklist.fields.cancel"), :class => 'btn btn-info', :onclick => "$('#modalPage').modal('hide');return false;" %>
+  </div>
+<% end %>

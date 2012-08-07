@@ -1,0 +1,17 @@
+<%=link_to(reverttask_path(:project_id => @project.id, :task_id => @task.id), :remote => true) do%>
+	<%=check_box_tag "chk-task-#{@task.id}", nil, (@task.column.id == @project.columns.order('"order"').last.id ? true : false), :style => 'margin-bottom:6px;'%>
+<%end%>
+
+<span class='bold'><%=@task.title%></span>
+<span class='italic'><%= I18n.t("tasklist.lists.is_a")%></span>
+<span class='bold'><%=@task.task_type.title%></span>
+<span class='italic'><%= I18n.t("tasklist.lists.scheduled_to")%></span>
+<span class='bold'><%=I18n.l(@task.end)%></span>
+<span class='italic'><%= I18n.t("tasklist.lists.current_status")%></span>
+<span class='bold'><%=@task.column.title%></span>
+
+<span id="task-icons-task-list-<%=@task.id%>" class='hide'>
+	<%= link_to content_tag(:i, nil, :class=>'icon-pencil'), edit_project_task_list_task_path(@project, @task.task_list, @task), :remote => true%>
+	<%= link_to content_tag(:i, nil, :class=>'icon-remove'), project_task_list_task_path(@project, @task.task_list, @task), :remote => true, :method => :delete, :confirm => t("tasks.messages.delete")%>
+	<span><i class='icon-eye-open' style='cursor:default;' data-original-title='<%=@task.title%>'data-content='<%=@task.body%>'></i><span>
+</span>

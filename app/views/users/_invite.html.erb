@@ -1,0 +1,22 @@
+<div class="modal hide fade" id="modalInvite" style='padding:10px;'>
+  <%= form_tag invite_friend_project_path(@project) do %>
+    <h3><%= I18n.t("projects.labels.invite")%></h3>
+    <hr/>
+    <div class="field">
+      <%= image_tag '/invite.png'%>
+      <%= text_field_tag 'users[]', nil, :placeholder => I18n.t("projects.fields.email"), :style => 'width:350px' %>
+    </div>  
+    <div class="field">
+      <%= image_tag '/invite.png'%>
+      <%= text_field_tag 'users[]', nil, :placeholder => I18n.t("projects.fields.email"), :style => 'width:350px;' %>
+    </div>
+    <div class="field">
+      <%= image_tag '/invite.png'%>
+      <%= text_field_tag 'users[]', nil, :placeholder => I18n.t("projects.fields.email"), :style => 'width:350px;' %>
+    </div>
+    <div class="form-actions" style='margin-top:20px;'>
+      <%= submit_tag I18n.t("users.labels.invite"), :class => 'btn btn-primary' %>
+      <%= content_tag :button, I18n.t("users.labels.cancel"), :class => 'btn btn-info', :onclick => "$('#modalInvite').modal('hide');return false;" %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+todo:
+  title: Title of column
+  color: #FFFFFF
+  order: 1
+  active: 1
+
+test:
+  title: Test of column
+  color: #FFFFFF
+  order: 2
+  active: 1

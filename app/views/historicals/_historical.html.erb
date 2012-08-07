@@ -1,0 +1,18 @@
+<%task = Task.new.from_json(historical.description)%>
+
+<div style='margin-top:5px;border:1px solid #CCC; padding:10px;border-radius:3px 3px 3px 3px;box-shadow:0 0 6px rgba(0, 0, 0, 0.3)'>
+  <span style='float:right'><%= historical.created_at.strftime("%d/%m/%Y %H:%M") %></span>
+  <div>
+	<a href='#' onclick='$("#historical_<%=historical.id%>").toggle();'>
+		<%= "#{historical.title} #{t('historicals.labels.by')} #{User.find(historical.user_id).email}" %>
+	</a>
+  </div>
+  <div style='display:none;margin-top:5px;font-size:12px;' id='historical_<%=historical.id%>'>
+	<%= t("activerecord.attributes.task.title") %>: <%=task.title%> <br/>
+	<%= t("activerecord.attributes.task.body") %>: <%=task.body%> <br/>
+	<%= t("activerecord.attributes.task.end") %>: <%=task.end.strftime("%d/%m/%y")%> <br/>
+	<%= t("historicals.labels.user") %>: <%=task.user.email if !task.user.nil?%> <br/>
+	<%= t("historicals.labels.column") %>: <%=task.column.title%> <br/>
+	<%= t("historicals.labels.task_type") %>: <%=task.task_type.title%> <br/>
+  </div>
+</div>

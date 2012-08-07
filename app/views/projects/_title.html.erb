@@ -1,0 +1,16 @@
+<h1>
+	<span id='title-project'><%= @project.title%></span>
+	<%= link_to content_tag(:i, nil, :class=>'icon-pencil'), '#', :id => 'edit-project-link', :onclick => 'editProject()', :class => 'hide'%>
+  <div  class='links'>
+
+    <%= link_to I18n.t("tasklist.labels.new"), new_project_task_list_path(@project), :id => 'new-task-list-link', :remote => true, :style => 'margin-left:10px;'%>
+
+    <%= link_to I18n.t("tasktypes.labels.new"), new_project_task_type_path(@project), :remote => true, :style => 'margin-left:10px;'%>
+
+    <%= link_to I18n.t("columns.labels.new"), new_project_column_path(@project), :remote => true, :style => 'margin-left:10px;'%>
+
+    <%= link_to I18n.t("users.labels.invite_a_friend"), "#", :onclick => "$('#modalInvite').modal();", :style => 'margin-left:10px;'%>
+
+    <%= link_to I18n.t("projects.kanban"), kanban_path(@project, :task_list_id => (@project.task_lists.current.first.nil? ? @project.task_lists.last : @project.task_lists.current.first)), :style => 'margin-left:10px;'%>
+  </div>
+</h1>

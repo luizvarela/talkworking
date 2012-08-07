@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @column.title %>
+</p>
+
+<p>
+  <b>Color:</b>
+  <%= @column.color %>
+</p>
+
+<p>
+  <b>Order:</b>
+  <%= @column.order %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%= @column.project_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_column_path(@column) %> |
+<%= link_to 'Back', columns_path %>

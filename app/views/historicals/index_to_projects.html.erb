@@ -1,0 +1,30 @@
+<%= stylesheet_link_tag    "time-line-style", :media => "all" %>
+<%= javascript_include_tag "jquery.timelinr-0.9.5"%>
+<script type="text/javascript"> 
+	$(function(){
+		$().timelinr()
+	});
+</script>
+
+<h1><%=t("historicals.labels.projects")%></h1>
+<hr/>
+
+<div id="timeline">
+	<ul id="dates">
+		<li><a href="#1900">1900</a></li>
+		<li><a href="#1900">1900</a></li>
+		<li><a href="#1900">1900</a></li>
+	</ul>
+	<ul id="issues">
+		<li id="1900">
+			<%=image_tag "/kanban.png"%>
+			<h1>1900</h1>
+			<p></p>
+		</li>
+	</ul>
+	<div id="grad_left"></div>
+	<div id="grad_right"></div>
+	<a href="#" id="next">+</a>
+	<a href="#" id="prev">-</a>
+</div>
+

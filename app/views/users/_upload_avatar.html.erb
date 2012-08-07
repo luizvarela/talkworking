@@ -1,0 +1,11 @@
+<h1><%=I18n.t("users.upload_avatar")%></h1>
+<hr/>
+<%= form_for current_user, :url => {:action => "upload_avatar"}, :html => { :multipart => true } do |f| %>
+
+	<%= f.file_field :avatar %>
+	
+	<div class="form-actions">
+	    <%= f.submit I18n.t("users.fields.upload_avatar"), :class => 'btn btn-primary'%>
+	    <%= content_tag :button, I18n.t("tasks.fields.cancel"), :class => 'btn btn-info', :onclick => "$('#modalPage').modal('hide');return false;" %>
+	  </div>
+<% end %>

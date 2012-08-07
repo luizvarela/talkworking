@@ -1,0 +1,8 @@
+$("#edit-project-div").slideUp(function(){
+	$("#project-description-div").html("<%= escape_javascript @project.description %>");
+	$("#project-title-div").html("<%= escape_javascript(render 'title')%>");
+	$("#project-description-div").show();
+	$("#project-title-div").show();
+	$("#error-project-div").hide();
+	$("#save-project-link").hide();
+});

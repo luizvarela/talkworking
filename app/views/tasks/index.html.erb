@@ -1,0 +1,32 @@
+<h1><%= I18n.t("tasks.labels.listing")%></h1>
+
+<table class="table" style='margin-top:20px;'>
+  <thead>	
+  	<tr>
+	    <th><%=I18n.t("tasks.fields.title")%></th>
+	    <th><%=I18n.t("tasks.fields.body")%></th>
+		<th><%=I18n.t("tasks.fields.task_list")%></th>
+		<th><%=I18n.t("tasks.fields.column")%></th>
+		<th><%=I18n.t("tasks.fields.user")%></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+  </thead>
+	<tbody>
+		<% @tasks.each do |task| %>
+		  <tr>
+		    <td><%= task.title %></td>
+		    <td><%= format_string_with_reluctance task.body %></td>
+			<td><%= task.task_list.name %></td>
+			<td><%= task.column.title if !task.column.nil? %></td>
+			<td><%= task.user.email if !task.user.nil? %></td>
+			<td style='width:20px;'>
+				<%=link_to image_tag("/table_edit.png", :style => 'width:26px;'), edit_project_task_list_task_path(@project, @task_list, task)%>
+			</td>
+			<td style='width:20px;'>
+				<%=link_to image_tag("/table_delete.png", :style => 'width:26px;'), project_task_list_task_path(@project, @task_list, task), :method => :delete%>
+			</td>
+		  </tr>
+		<% end %>
+	</tbody>
+</table>

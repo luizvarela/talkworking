@@ -1,0 +1,32 @@
+<div class="tabbable tabs-below">
+	<div class="tab-content">
+		<div id='edit-task' class='tab-pane active'>
+			<h1><%=I18n.t("tasks.labels.edit")%></h1>
+			<div style='margin-top:10px;'>
+				<%= render 'form' %>
+			</div>
+		</div>
+		<div id="lB" class="tab-pane" style='height:400px;overflow:auto;'>
+			<h1><%=t("comments.labels.comments")%></h1>
+			<%= new_comment(@task) %>
+ 		    <hr/>
+			<%= comments @task %>
+        </div>
+		<div id="lC" class="tab-pane" style='height:400px;overflow:auto;'>
+			<h1><%=t("historicals.labels.task_historic")%></h1>
+			<hr />
+			<%= historicals @task %>
+		</div>
+	</div>
+	<ul class="nav nav-tabs">
+	    <li class='active'>
+	    	<a data-toggle="tab" href="#edit-task"><%=t("tasks.labels.editing")%></a>
+	    </li>
+	    <li class="">
+	    	<a data-toggle="tab" href="#lB"><%=t("tasks.labels.comments")%></a>
+	    </li>
+		<li class="">
+	    	<a data-toggle="tab" href="#lC"><%=t("tasks.labels.historical")%></a>
+		</li>
+	</ul>
+</div>

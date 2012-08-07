@@ -1,0 +1,28 @@
+<h1><%= I18n.t("columns.labels.listing")%></h1>
+
+<table class="table index-column-table">
+  <thead>	
+  	<tr>
+	    <th><%=I18n.t("columns.fields.title")%></th>
+	    <th><%=I18n.t("columns.fields.color")%></th>
+		<th><%=I18n.t("columns.fields.total_tasks")%></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+  </thead>
+	<tbody>
+		<% @columns.each do |column| %>
+		  <tr>
+		    <td><%= column.title %></td>
+		    <td style='width:120px;'><%= column.color %></td>
+			<td style='width:100px;'><%= column.tasks.count %> <%=I18n.t("columns.fields.tasks")%></td>
+			<td style='width:20px;'>
+				<%=link_to image_tag("/table_edit.png", :style => 'width:26px;'), edit_project_column_path(@project, column)%>
+			</td>
+			<td style='width:20px;'>
+				<%=link_to image_tag("/table_delete.png", :style => 'width:26px;'), project_column_path(@project, column), :method => :delete%>
+			</td>
+		  </tr>
+		<% end %>
+	</tbody>
+</table>

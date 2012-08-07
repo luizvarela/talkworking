@@ -1,0 +1,156 @@
+function initTutorial() {
+	$.gritter.add({
+		sticky: true,
+		title: '<%=I18n.t("projects.tutorial.init.title")%>',
+		text: '<%=I18n.t("projects.tutorial.init.text")%>',
+		image: '/tutorial/buzz.jpg',
+		after_close: function() {
+          mainMenu();
+        }
+	});
+}
+
+function mainMenu() {
+	$.gritter.add({
+        sticky: true,
+        title: '<%=I18n.t("projects.tutorial.mainmenu.title")%>',
+        text: '<%=I18n.t("projects.tutorial.mainmenu.text")%>',
+        after_close: function() {
+          $('.navbar-fixed-top').removeClass('border-tutorial');
+          breadCrumbs();
+        }
+      });
+      $('.navbar-fixed-top').addClass('border-tutorial');
+}
+
+function breadCrumbs() {
+	$.gritter.add({
+		sticky: true,
+		title: '<%=I18n.t("projects.tutorial.breadcrumbs.title")%>',
+		text: '<%=I18n.t("projects.tutorial.breadcrumbs.text")%>',
+		after_close: function() { 
+			$('#breadcrumbs').removeClass('border-tutorial')
+			projectTitle()
+		}
+	});
+	$('#breadcrumbs').addClass('border-tutorial');
+}
+
+function projectTitle() {
+	$.gritter.add({
+		sticky: true,
+		title: '<%=I18n.t("projects.tutorial.projecttitle.title")%>',
+		text: '<%=I18n.t("projects.tutorial.projecttitle.text")%>',
+		after_close: function() {
+			$('#title-project').removeClass('border-tutorial');
+			projectLinks();
+		}
+	});
+	$('#title-project').addClass('border-tutorial')
+}
+
+function projectLinks() {
+	$.gritter.add({
+		sticky: true,
+		title: '<%=I18n.t("projects.tutorial.projectlink.title")%>',
+		text: '<%=I18n.t("projects.tutorial.projectlink.text")%>',
+		after_close: function() {
+			$('.links').removeClass('border-tutorial');
+			createtaskListTutorial();
+		}
+	});
+	$('.links').addClass('border-tutorial')
+}
+
+function createtaskListTutorial() {
+	$.gritter.add({
+		sticky: true,
+		title: '<%=I18n.t("projects.tutorial.createtasklist.title")%>',
+		text:'<%=I18n.t("projects.tutorial.createtasklist.text")%>',
+		after_close: function() {
+			if($('.task-list').size() == 0) {
+				createtaskListTutorial();
+			} else {
+				$('#new-task-list-link').removeClass('border-tutorial');
+				taskListTutorial();
+			}
+		}
+	});
+	$('#new-task-list-link').addClass('border-tutorial');
+}
+
+function taskListTutorial() {
+	$.gritter.add({
+		sticky: true,
+		title: '<%=I18n.t("projects.tutorial.tasklist.title")%>',
+		text: '<%=I18n.t("projects.tutorial.tasklist.text")%>',
+		after_close: function() {
+			if($('.task').size() == 0) {
+				taskListTutorial();
+			} else {
+				$('.task-lists').removeClass('border-tutorial');
+				taskTutorial();
+			}
+		}
+	})
+	$('.task-lists').addClass('border-tutorial')
+}
+
+function taskTutorial() {
+	$.gritter.add({
+		sticky: true,
+		title: '<%=I18n.t("projects.tutorial.task.title")%>',
+		text: '<%=I18n.t("projects.tutorial.task.text")%>',
+		after_close: function() {
+			columnsTutorial()
+		}
+	})
+}
+
+function columnsTutorial() {
+	$.gritter.add({
+		sticky: true,
+		title: '<%=I18n.t("projects.tutorial.columns.title")%>',
+		text: '<%=I18n.t("projects.tutorial.columns.text")%>',
+		after_close: function() {
+			$('.columns').removeClass('border-tutorial')
+			tasktypesTutorial()
+		}
+	})
+	$('.columns').addClass('border-tutorial')
+
+}
+
+function tasktypesTutorial() {
+	$.gritter.add({
+		sticky: true,
+		title: '<%=I18n.t("projects.tutorial.tasktype.title")%>',
+		text: '<%=I18n.t("projects.tutorial.tasktype.text")%>',
+		after_close: function() {
+			$('.task-types').removeClass('border-tutorial')
+			kanbanTutorial()
+		}
+	})
+	$('.task-types').addClass('border-tutorial')
+}
+
+function kanbanTutorial() {
+	$.gritter.add({
+		sticky: true,
+		title: '<%=I18n.t("projects.tutorial.kanban.title")%>',
+		text: '<%=I18n.t("projects.tutorial.kanban.text")%>',
+		after_close: function() {
+			endTutorial()
+		}
+	})
+}
+
+function endTutorial() {
+	$.gritter.add({
+		sticky: true,
+		title: '<%=I18n.t("projects.tutorial.end.title")%>',
+		text: '<%=I18n.t("projects.tutorial.end.text")%>'
+	});
+}
+
+initTutorial();

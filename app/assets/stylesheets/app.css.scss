@@ -1,0 +1,36 @@
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+.bold {
+	font-weight:bold;
+}
+
+
+.field_with_errors input {
+	border-color: #B94A48;
+	color: #B94A48;
+}
+
+.italic {
+	font-style:italic;
+}
+
+.colorpicker {
+	z-index:1051;
+}
+
+.new-comment {
+	float:right;
+	margin-top: -30px;
+}
+
+.style-body {
+	min-height:600px;
+	border: 1px solid #CCC;
+	width:90% !important;
+	padding:15px;
+	border-radius:3px 3px 3px 3px;
+	box-shadow:0 0 6px rgba(0, 0, 0, 0.3);
+}

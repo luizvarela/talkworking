@@ -1,0 +1,2 @@
+$('#task-errors-message').html("<%= escape_javascript @task.errors.full_messages.to_sentence %>");
+$('#task-errors-div').removeClass('hide');

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Talkworking</title>
+  <%= stylesheet_link_tag    "application", "bootstrap", "jquery-ui", "colorpicker", "app", controller_name, :media => "all" %>
+  <%= javascript_include_tag "application", "bootstrap", "jquery-ui", "colorpicker", controller_name %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+      	<div class="navbar-inner" style="padding-left:175px;">
+			<div style="width: auto;" class="container">
+              <ul class="nav">
+                <li class="dropdown">
+                  <a href="<%=projects_path%>"><%=I18n.t("system.menus.projects")%></a>
+                </li>
+				<!--li class="dropdown">
+                  <a href="<%=historicals_to_project_path%>"><%=I18n.t("system.menus.historicals")%></a>
+                </li-->
+				<li>
+					<a href="<%=new_suggestion_path%>"><%=I18n.t("system.menus.suggestions")%></a>
+				</li>
+              </ul>
+			  <div class="btn-group pull-right">
+			      <a href="#" data-toggle="dropdown" class="btn dropdown-toggle">
+	              <i class="icon-user"></i>
+				  	<%=current_user.email%>
+	              <span class="caret"></span>
+	            </a>
+	            <ul class="dropdown-menu">
+	              <!--li>
+	              	<%=link_to I18n.t('users.fields.profile'), profile_path %>
+	              </li>
+	              <li class="divider"></li-->
+	              <li>
+	              	<%=link_to I18n.t('system.fields.logout'), logout_path %>
+	              </li>
+	            </ul>
+	          </div>
+            </div>
+          </div>
+	</div>
+	
+	<%= content_tag(:div, content_tag(:span, flash[:notice], :id => 'notice-message-span'), :class => 'alert alert-info', :align =>'center') if flash[:notice].present?%>
+	
+    <%= content_tag(:div, content_tag(:span, flash[:alert], :id => 'alert-message-span'), :class => 'alert alert-notice', :align =>'center') if flash[:alert].present?%>
+
+    <%= content_tag(:div, content_tag(:span, flash[:error], :id => 'error-message-span'), :class => 'alert alert-error', :align =>'center') if flash[:error].present?%>
+
+    <ul id='breadcrumbs' style='padding-left:2%;padding-bottom:10px;'>
+		<%= render_breadcrumbs %>
+    </ul>  
+    <div class="container style-body">
+		<%= yield %>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+$('#kanban-main-div').html("<%=escape_javascript(render('projects/list_kanban'))%>");
+$('#<%=@task.id%>').fadeOut();
+$('#<%=@task.id%>').fadeIn();
+$(".icon-eye-open").popover({delay: { show: 800 }})

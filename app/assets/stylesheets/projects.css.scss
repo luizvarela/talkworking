@@ -1,0 +1,215 @@
+.index {
+	.thumbnail {
+		min-height:200px;
+		cursor:pointer;
+
+		.description {
+			color:#777;
+			height:30px;
+			padding-top:5px;
+			color:#777;
+		}
+
+		.info {
+			min-height:150px;
+		}
+	}
+}
+
+.kanban {
+	div.main {
+		width:100%;
+		min-height:90%;
+
+		.new-task {
+			float:right;
+			margin-top:10px;
+		}
+
+		div.column {
+			float:left;
+
+			div.main {
+				min-height:500px;
+
+				div.task {
+					width:135px;
+					height:55px;
+					border-radius: 3px;
+					box-shadow:0 0 6px rgba(0, 0, 0, 0.9);
+					cursor:move;
+					background-color:white;
+					float:left;
+					margin:5px;
+
+					div.task-type {
+						width:10px;
+						height:55px;
+						float:left;
+					}
+
+					div.task-body{
+						float:left;
+						width:115px;
+						padding-left:5px;
+						font-size:12px;
+
+						.task-title {
+							border-bottom:dashed 1px #CCC;
+						}
+
+						.task-body {
+							width:110px;
+							height:40px;
+							color:#777;
+							font-size:11px;
+						}
+
+					}
+				}
+			}
+		}
+	}
+}
+
+.show {
+	#edit-project-link {
+		position:relative;
+		top:10px;
+	}
+	div.edit {
+		color: #777777;
+		margin-top: 10px;
+		margin-bottom: 15px;
+
+		div.edit-form {
+			display: none;
+
+			.field {
+				input[type="text"] {
+					width:350px;
+				}
+			}
+		}
+	}
+	div.links {
+		float:right;
+		font-weight:normal;
+		font-size:12px;
+		margin-top:6px;
+	}
+	div.empty-project {
+		padding-top:10px;
+		padding-left:15px
+	}
+
+	div.task-lists {
+
+		#view-all-tasklists {
+			position:relative;
+			top:5px;
+		}
+
+		.main {
+			padding-top:10px;
+
+			li.task-list {
+				margin-top:10px;
+
+				ul.tasks {
+					list-style:none;
+					margin-top:10px;
+
+					.task {
+						margin-top:10px;
+					}
+				}
+			}
+		}
+	}
+
+	div.columns {
+		#view-all-columns {
+			position:relative;
+			top:5px;
+		}
+
+		li.column {
+			margin-top:10px;
+
+			ul.tasks {
+				list-style:none;
+				margin-top:10px;
+
+				li.task {
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+
+	div.task-types {
+		.main {
+			padding-top:10px;
+
+			li.task-type {
+				margin-top:10px;
+
+				ul.tasks {
+					list-style:none;
+					margin-top:10px;
+
+					.task {
+						margin-top:10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.index-column-table {
+	margin-top:20px;
+}
+
+
+#save-project-link {
+	display:none;
+}
+
+.project-create-primary-div {
+	float:left;
+	border-right:1px solid #CCC;
+	width:450px;
+}
+
+.project-create-second-div {
+	float:left;
+	margin-left:10px;
+}
+
+.project-index-description {
+	min-height:35px;
+	margin-top:5px;
+	color:#777;
+}
+
+.list-task-type-color {
+	width:5px;
+	height:5px;
+	float:left;
+	margin-top:6px;
+	margin-right:5px;
+	border-radius:3px;
+}
+
+.index-task-type-table {
+	margin-top:20px;
+}
+
+
+
+
+.index-task-list-div-main {
+	margin-top:20px;
+}

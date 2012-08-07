@@ -1,0 +1,28 @@
+<div id="project-title-div">
+	<h1><%= @task_list.name%></h1>
+</div>
+<hr />
+
+<div class="progress progress-success" style='border:1px solid #777;'>
+	<div class="bar" style="color:black;width:<%=get_percent_tasks_completed_for_project @project, @task_list%>%;text-align:right;">
+		<%=get_percent_tasks_completed_for_project @project, @task_list%>%
+	</div>
+</div>
+
+<hr />
+<hr />
+
+<div>
+	<h3>Status geral</h3>
+	<ul style='margin-top:10px;'>
+		<li>
+			<span class='bold' id='tasks-total-count'><%=@task_list.tasks.count%></span>
+			<span class='italic'> tarefa(s) ao total estão nesta lista</span>
+		</li>
+		<li style='margin-top :5px;'>
+			<span class='bold' id='tasks-completed-count'><%=get_tasks_completed_for_project(@project, @task_list).count%></span>
+			<span class='italic'> tarefa(s) concluída o que representa</span>
+			<span class='bold' id='tasks-completed-percent'><%=get_percent_tasks_completed_for_project @project, @task_list%>%</span>
+		</li>
+	</ul>
+</div>

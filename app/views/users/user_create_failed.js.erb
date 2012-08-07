@@ -1,0 +1,2 @@
+$('#user-errors-message').html("<%= escape_javascript @user.errors.full_messages.to_sentence %>");
+$('#user-errors-div').removeClass('hide');

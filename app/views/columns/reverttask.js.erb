@@ -1,0 +1,4 @@
+$('#list-task-list-li-<%=@task.id%>').fadeOut();
+$('#list-task-list-li-<%=@task.id%>').html("<%= escape_javascript(render 'task_lists/list_task_li')%>");
+$('#list-task-list-li-<%=@task.id%>').fadeIn();
+$(".icon-eye-open").popover({delay: { show: 500 }});

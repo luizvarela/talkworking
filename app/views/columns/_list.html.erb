@@ -1,0 +1,73 @@
+<script type='text/javascript'>
+	$(document).ready(function() {
+		$("#list-column-ul").sortable({
+	      cursor: "move",
+	      start: function(event, ui) {
+	        $("#list-column-sub-ul-" + (ui.item.attr('id'))).fadeOut();
+	      },
+	      stop: function(event, ui) {
+	        $("#list-column-sub-ul-" + (ui.item.attr('id'))).fadeIn(1);
+	      },
+	      update: function(event, ui) {
+	        var orderedlist;
+	        orderedlist = "";
+	        $('.column').each(function(i, el) {
+	          orderedlist += "columns[]=" + ($(el).attr('id')) + "&";
+	        });
+	        $.ajax({
+	          url: '<%=sortcolumn_path(:project_id => @project.id)%>',
+	          data: orderedlist
+	        });
+	      }
+	    });
+
+	});
+</script>
+
+<% if @project.columns.any?%>
+<hr />
+<div class='columns'>
+   
+	<div>
+		<h3>
+			<%=I18n.t("columns.labels.listing")%>
+		</h3>
+	</div>
+
+   <ul id='list-column-ul'>
+	<% @project.columns.order('"order"').each do |column| %>
+		<li class='column' id='<%=column.id%>'>
+			<span onmousemove='$("#cl-icons-<%=column.id%>").show()' onmouseout='$("#cl-icons-<%=column.id%>").hide()'>
+		        <span><%=column.title%></span>
+				<span id='cl-icons-<%=column.id%>' class='hide'>
+					<%= link_to content_tag(:i, nil, :class=>'icon-pencil'), edit_project_column_path(@project, column), :remote => true%>
+					<%= link_to content_tag(:i, nil, :class=>'icon-remove'), project_column_path(@project, column), :remote => true, :method => :delete, :confirm => t("columns.messages.delete")%>
+				</span>
+			</span>
+			<% if column.tasks.any? %>
+				<ul class='tasks' id='list-column-sub-ul-<%=column.id%>'>
+					<% column.tasks.each do |task|%>
+						<li class='task' onmousemove='$("#task-icons-columns-<%=task.id%>").show()' onmouseout='$("#task-icons-columns-<%=task.id%>").hide()'>
+							-
+							<span class='bold'><%=task.title%></span>
+							<span class='italic'><%=I18n.t("columns.lists.is_a")%></span>
+							<span class='bold'><%=task.task_type.title%></span>
+							<span class='italic'><%=I18n.t("columns.lists.scheduled_to")%></span>
+							<span class='bold'><%=I18n.l(task.end)%></span>
+							<span class='italic'><%=I18n.t("columns.lists.current_task_list")%></span>
+							<span class='bold'><%=task.task_list.name%></span>
+							<span id="task-icons-columns-<%=task.id%>" class='hide'>
+								<%= link_to content_tag(:i, nil, :class=>'icon-pencil'), edit_project_task_list_task_path(@project, task.task_list, task), :remote => true%>
+								<%= link_to content_tag(:i, nil, :class=>'icon-remove'), project_task_list_task_path(@project, task.task_list, task), :remote => true, :method => :delete, :confirm => t("tasks.messages.delete")%>
+								<span><i class='icon-eye-open' style='cursor:default;' data-original-title='<%=task.title%>'data-content='<%=task.body%>'></i><span>
+							</span>
+						</li>
+					<% end %>
+				</ul>
+			<%end%>
+			</li>
+		<% end %>
+		</ul>
+	<br/>
+</div>
+<%end%>

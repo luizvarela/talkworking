@@ -1,0 +1,5 @@
+$('#modalPage').modal('hide');
+$('#lists').html('<%=escape_javascript render("projects/lists") %>');
+$('#kanban-main-div').html('<%=escape_javascript render("projects/list_kanban") %>');
+$(".icon-eye-open").popover({delay: { show: 800 }});
+

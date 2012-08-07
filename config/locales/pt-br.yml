@@ -1,0 +1,287 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+pt-br:
+  notifier:
+    default:
+      footer: "\nObrigado pela atenção.\n Equipe Talkworking"
+    associated_a_project:
+      message: "Olá, e desculpe encomodar, \n mas seu amigo %{inviter_name}, o convidou para participar do projeto %{project_name}, no http://talkworking.herokuapp.com . Como você já é veterano conosco, apenas acesse a sua conta e lá estará o projeto novo."
+      subject: "Olá, coisas aconteceram no talkworking"
+    invite_a_friend:
+      message: "Olá, e seja bem vindo, \n seu amigo %{inviter_name}, o convidou para participar do projeto %{project_name}, no http://talkworking.herokuapp.com. como você ainda não faz parte do talkworking nós geramos uma senha para você,  é esta aqui: %{password} \n\n Use ela para acessar sua conta, você pode troca-la no seu perfil."
+      subject: "Olá, você foi convidado para participar do talkworking"
+    welcome:
+      message: "Olá, seja bem vindo ao talkworking project,  apartir de agora você pode aproveitar o melhor deste gerenciador de projetos, simples e eficaz."
+      subject: "Bem vindo ao talkworking"
+  hello: "Olá Mundo"
+  tasks:
+    labels:
+      listing: Lista de tarefas
+      new: Nova Tarefa
+      title: Título
+      edit: Editando tarefa
+      editing: Edição
+      comments: Comentários
+      historical: Histórico
+    fields:
+      cancel: Cancelar
+      save: Salvar tarefa
+      title: Titulo
+      body: Corpo
+      task_list: Lista de tarefas
+      column: Coluna
+      user: Usuário
+    messages:
+      delete: Deseja realmente deletar esta tarefa?
+  tasktypes:
+      lists:
+        task_list: esta atualmente na lista de tarefas
+        scheduled_to: agendado para
+        current_status: e seu status atual é
+      labels:
+          new: Novo tipo de tarefa
+          listing: Lista de tipos de tarefa
+          edit: Editando tipo de tarefa
+      fields:
+          title: Título
+          color: Cor
+          total_tasks: Total de tarefas
+          save: Salvar tipo de tarefa
+          tasks: Tarefa(s)
+          cancel: Cancelar
+      defaults:
+          new_feature: Nova funcionalidade
+          bug: Bug
+  columns:
+      messages:
+        sort_column:
+          success: As colunas foram reordenadas com sucesso
+          fail: Ocorreu um erro ao reordenar as colunas por favor tente novamente
+        delete: Deseja realmente excluir esta coluna?
+      labels:
+          title: Colunas
+          new: Nova coluna
+          edit: Editando coluna
+          listing: Lista de colunas
+          view_all: Ver todas as colunas
+      fields:
+          title: Título
+          color: Cor
+          save: Salvar coluna
+          total_tasks: Total de tarefas
+          tasks: Tarefas(s)
+          cancel: Cancelar
+      defaults:
+          todo: TODO
+          doing: Em andamento
+          done: Terminado
+      lists:
+          is_a: é um(a)
+          scheduled_to: agendado para
+          current_task_list: e atualmente esta na lista de tarefas
+  tasklist:
+      labels:
+          new: Nova lista de tarefas
+          title: Título
+          listing: Lista de tarefas
+          edit: Editando lista de tarefa
+          view_all: Ver todas as listas de tarefas
+          new_task: Adicionar tarefa à lista
+      fields:
+          name: Nome
+          description: Descrição
+          end_date: Data de termino
+          save: Salvar lista de tarefa
+          cancel: Cancelar
+      lists:
+        is_a: é um(a)
+        scheduled_to: agendado para
+        current_status: e seu status atual é
+      breadcrumbs:
+        show: visualizando lista de tarefas
+  historicals:
+      titles:
+          task:
+              create: "Tarefa criada"
+              delete: "Tarefa excluída"
+              update: "Tarefa atualizada"
+              update_column: "Tarefa trocou de status"
+      labels:
+          projects: Histórico geral
+          task_historic: Histórico da tarefa
+          user: Usuário
+          by: por
+          column: Coluna
+          task_type: Tipo
+  suggestions:
+      labels:
+          new: Nova sugestão
+          save: Salvar sugestão
+      fields:
+          body: Corpo
+      messages:
+          create: Sugestão criada com sucesso
+  users:
+      messages:
+          upload_avatar:
+              success: Você trocou seu avatar com sucesso
+              fail: Ocorreu um erro por favor tente novamente
+      upload_avatar: Upload avatar
+      labels:
+        invite_a_friend: Convidar amigos
+        invite: Convidar
+        cancel: Cancelar
+        new: Novo usuário
+      fields:
+          profile: Meu perfil
+          upload_avatar: Upload avatar
+          email: E-mail
+          password: Senha
+          save: Salvar usuário
+  system:
+      messages:
+          access_denied: Acesso negado
+          delete_columns:
+              error_no_columns: Você deve ter pelo menos uma coluna no projeto.
+      fields:
+          logout: Sair
+          view_all: Ver todos
+      menus:
+          projects: Projetos
+          historicals: Histórico geral
+          suggestions: Sugestões
+  comments:
+      labels:
+          new: Novo Comentário
+          comments: Comentários
+          say: "diz:"
+      fields:
+          content: Conteúdo
+          save: Salvar
+          cancel: Cancelar
+          title: Título
+  projects:
+    messages:
+      invite_friend: "Seus amigos foram convidados e e-mails enviados, notificando deste convite."
+    new_project: Novo projeto
+    edit: Editar projeto
+    kanban: Kanban
+    all_users: Todos os úsuarios
+    breadcrumbs:
+      index: Meus projetos
+      show: Visualizando projeto
+      kanban: Quadro de kanban
+    labels:
+        invite: Convide seus amigos
+        welcome: Olá e Bem vindo!!!
+        loading: Carregando...
+    fields:
+      new: Novo projeto
+      title: Título
+      description: Descrição
+      email: E-mail
+      save: Salvar projeto
+      count_users: Usuário(s)
+      columns_count: Coluna(s)
+      task_lists_count: Lista de tarefa(s)
+      edit_project: Editar projeto
+      write_here: Escreva aqui
+      save_project: Salvar projeto
+      task_count: Tarefa(s)
+    texts:
+        start: Ao talkworking, um gerenciador de tarefas amigável e fácil de usar. Esta é a tela que provavelmente você mais ira usar, por quê é aqui que a mágica começa!
+  sessions:
+    fields:
+      login: Login
+      logout: Sair
+      email: E-mail
+      password: Senha
+      not_registered: Não sou cadastrado
+    messages:
+      login_successfully: Logado com sucesso
+      login_error: Seu Login/senha estão incorretos
+  time:
+    formats:
+      default: "%H:%M"
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d de %B"
+      long: "%d de %B de %Y"
+      datepicker: dd/mm/yy
+    day_names: [Domingo, Segunda, Terça, Quarta, Quinta, Sexta, Sábado]
+    abbr_day_names: [Dom, Seg, Ter, Qua, Qui, Sex, Sáb]
+    month_names: [~, Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
+    abbr_month_names: [~, Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
+    order: ['day', 'month', 'year']
+  activerecord:
+    attributes:
+        task:
+          title: Título
+          task_type_id: Tipo de tarefa
+          end: Data de término
+        column:
+          color: Cor
+          title: Título
+        project:
+          title: Título
+        task_list:
+          name: Nome
+          end_date: Data de término
+        task_type:
+          color: Cor
+          title: Título
+    errors:
+      models:
+        user:
+            attributes:
+                email:
+                    blank: não pode ser vazio
+                    too_short: é muito pequeno
+                    invalid: é inválido
+                    taken: já está sendo usado
+                password:
+                    too_short: é muito pequeno
+                    blank: não pode ser vazio
+        suggestion:
+            attributes:
+                body:
+                    blank: não pode ser vazio
+        task:
+          attributes:
+            title:
+              blank: não pode ser vazio
+            task_type_id:
+              blank: não pode ser vazio
+            end:
+              not_a_date: não é uma data válida
+        column:
+          attributes:
+            title:
+              blank: não pode ser vazio
+            color:
+              blank: não pode ser vazio
+              invalid: não é uma cor válida
+        task_type:
+          attributes:
+            title:
+              blank: não pode ser vazio
+            color:
+              blank: não pode ser vazio
+              invalid: não é uma cor válida
+        task_list:
+          attributes:
+            end_date:
+              not_a_date: não é uma data válida
+            name:
+              blank: não pode ser vazio
+        project:
+          attributes:
+            title:
+              blank: não pode ser vazio
+  support:
+    array:
+      two_words_connector: ' e '
+      words_connector: ', '
+      last_word_connector: ', e ' 

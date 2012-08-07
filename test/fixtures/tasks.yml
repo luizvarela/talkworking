@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  body: MyText
+  task_list_id: 1
+  user_id: 1
+  end: 2012-05-07
+  column_id: 1
+
+two:
+  title: MyString
+  body: MyText
+  task_list_id: 1
+  user_id: 1
+  end: 2012-05-07
+  column_id: 1

@@ -1,0 +1,18 @@
+<%= content_tag(:i, nil, :class=>'icon-plus-sign new-comment', :onclick =>"$('#novo_comentario').children().slideDown();")%>
+<div id='novo_comentario' style='margin-top:10px;'>
+   <div id="form_comentario" style="display: none;">
+    <%= form_for Comment.new, :remote => true do |f| %>
+      <%= hidden_field :comment, :comentavel_id,
+            :value => comentavel.id %>
+      <%= hidden_field :comment, :comentavel_type,
+            :value => comentavel.class %>
+      <div class="field">
+        <%= f.text_area :content, :rows => 5, :placeholder => I18n.t("comments.fields.content"), :style => 'width:350px;'  %>
+	  </div>
+      <div class="actions">
+        <%= f.submit I18n.t("comments.fields.save"), :class => 'btn btn-primary'%>
+		<%= link_to I18n.t("comments.fields.cancel"), '#', :class => 'btn btn-info', :onclick => "$('#novo_comentario').children().slideUp();"%>
+  	  </div>
+    <% end %>
+  </div>
+</div>

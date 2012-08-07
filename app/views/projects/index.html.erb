@@ -1,0 +1,36 @@
+<div class='index'>
+  <ul class="thumbnails">
+    <li class="span2">
+      <div class="thumbnail" style='min-height:150px;'>
+        <img alt="" src="/add_project.png">
+        <div class="caption" align='center'>
+          <p>
+              <%= link_to t("projects.fields.new"), new_project_path, :class => 'btn btn-primary', :style=> 'color:white;'%>
+          </p>
+        </div>
+      </div>
+    </li>
+    <% @projects.each do |project| %>
+      <li class="span3">
+        <div class="thumbnail" onclick='location.href="<%=project_path project%>"'>
+            <div class="caption">
+              <div align='center'><h3><%= format_string_with_reluctance project.title, 17 %></h3></div>
+    		      <div class='description'> <%= format_string_with_reluctance (project.description), 24%></div>
+              <div class='info'>
+          			<span class="badge" id='user-count-div'><%= project.users.count %></span> <%= t("projects.fields.count_users")%>
+          			<br/>
+          			<br/>
+          			<span class="badge" id='task-lists-count-div'><%= project.task_lists.count %></span> <%= t("projects.fields.task_lists_count")%>
+          			<br/>
+          			<br/>
+          			<span class="badge" id='column-count-div'><%= project.columns.count %></span> <%= t("projects.fields.columns_count")%>
+          			<br/>
+          			<br/>
+          			<span class="badge" id='column-count-div'><%= get_tasks_for_projects(project).count %></span> <%= t("projects.fields.task_count")%>
+              </div>
+            </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,51 @@
+<% if @project.task_types.any?%>
+<div class='task-types'>
+	<hr />
+	<div>
+		<h3 >
+			<%=I18n.t("tasktypes.labels.listing")%>
+		</h3>
+	</div>
+	<div class='main'>
+	<ul style='list-style:none;margin-left:13px;'>
+	<% @project.task_types.each do |task_type| %>
+
+		<li class='task-type'>
+
+			<div class='list-task-type-color' style='border: 1px solid <%=task_type.color%>;background-color:<%=task_type.color%>;'></div>
+
+			<span onmousemove='$("#tl-icons-<%=task_type.id%>").show()' onmouseout='$("#tl-icons-<%=task_type.id%>").hide()'>
+		        <span style='margin-left: 3px;'><%=task_type.title%></span>
+		        <span id='tl-icons-<%=task_type.id%>' class='hide'>
+			        <%= link_to content_tag(:i, nil, :class=>'icon-pencil'), edit_project_task_type_path(@project, task_type), :remote => true%>
+		    	</span>
+	    	</span>
+   			<ul class='tasks'>
+				<% if task_type.tasks.any? %>
+					<% task_type.tasks.each do |task|%>
+						<li class='task' onmousemove='$("#task-icons-task-type-<%=task.id%>").show()' onmouseout='$("#task-icons-task-type-<%=task.id%>").hide()'>
+							-
+							<span class='bold'><%=task.title%></span>
+							<span class='italic'><%= I18n.t("tasktypes.lists.task_list")%></span>
+							<span class='bold'><%=task.task_list.name%></span>
+							<span class='italic'><%= I18n.t("tasktypes.lists.scheduled_to")%></span>
+							<span class='bold'><%=I18n.l(task.end)%></span>
+							<span class='italic'><%= I18n.t("tasktypes.lists.current_status")%></span>
+							<span class='bold'><%=task.column.title%></span>
+							<span id="task-icons-task-type-<%=task.id%>" class='hide'>
+								<%= link_to content_tag(:i, nil, :class=>'icon-pencil'), edit_project_task_list_task_path(@project, task.task_list, task), :remote => true%>
+								<%= link_to content_tag(:i, nil, :class=>'icon-remove'), project_task_list_task_path(@project, task.task_list, task), :remote => true, :method => :delete, :confirm => t("tasks.messages.delete")%>
+								<span><i class='icon-eye-open' style='cursor:default;' data-original-title='<%=task.title%>'data-content='<%=task.body%>'></i><span>
+							</span>
+						</li>
+					<% end %>
+				<%end%>
+			</ul>
+			</li>
+		<% end %>
+		</ul>
+	</div>
+	<br/>
+</div>
+<%end%>
+

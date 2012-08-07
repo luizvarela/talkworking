@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+buy_bread:
+  name: Task 1
+  description: this is task 1
+  end_date: <%=Time.now%>
+  active: 1
+
+testing_project:
+  name: Task 2
+  description: this is task 2
+  end_date: <%=Time.now - 1%>
+  active: 1

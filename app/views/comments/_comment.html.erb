@@ -1,0 +1,16 @@
+
+<div id="comment_<%= comment.id %>" style='margin-top:5px;border:1px solid #CCC; padding:10px;border-radius:3px 3px 3px 3px;box-shadow:0 0 6px rgba(0, 0, 0, 0.3)'>
+	<% if comment.user.id == current_user.id %>
+		<%= link_to content_tag(:i, nil, :class=>'icon-remove'),  comment,
+	                        :method => :delete,
+	                        :remote => true,
+	                        :id => "remove_comentario_#{comment.id}", :style => 'float:right' %>
+    <%end%>
+  <div>
+	<b>
+		<%= comment.created_at.strftime("%d/%m/%Y %H:%M") %>  - 
+		<%=comment.user.email%> <%=t("comments.labels.say")%>
+	</b>
+  </div>	
+  <%= comment.content %>
+</div>

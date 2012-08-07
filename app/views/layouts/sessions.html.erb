@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Talkworking</title>
+  <%= stylesheet_link_tag    "application", "bootstrap", :media => "all" %>
+  <%= javascript_include_tag "application", "bootstrap" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+    <div class="container-fluid" align='center' style='margin-top:50px;'>
+      <%= content_tag(:div, content_tag(:span, flash[:alert], :id => 'info-message-span'), :class => 'alert alert-info') if flash[:alert].present?%>
+      <div class="row-fluid" align='center' style='width:350px;'>
+        <div class="span9">
+         <%= yield %>
+        </div>
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; TalkWorking</p>
+      </footer>
+
+    </div>
+</body>
+
+</html>
