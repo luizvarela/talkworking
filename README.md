@@ -27,15 +27,15 @@ Especificações
 
 > E para o seu layout foi usado o bootstrap (http://twitter.github.com/bootstrap/)
 
-![Tela de login](https://github.com/leonardoprg/talkworking/tree/master/public/talkworking/login.png)
+![Tela de login](https://raw.github.com/leonardoprg/talkworking/master/public/talkworking/login.png)
 
-![Meus Projetos](https://github.com/leonardoprg/talkworking/tree/master/public/talkworking/projetos.png)
+![Meus Projetos](https://raw.github.com/leonardoprg/talkworking/master/public/talkworking/projetos.png)
 
-![Gerencia projeto](https://github.com/leonardoprg/talkworking/tree/master/public/talkworking/show_projeto.png)
+![Gerencia projeto](https://raw.github.com/leonardoprg/talkworking/master/public/talkworking/show_projeto.png)
 
-![Editar tarefa](https://github.com/leonardoprg/talkworking/tree/master/public/talkworking/edit_tarefa.png)
+![Editar tarefa](https://raw.github.com/leonardoprg/talkworking/master/public/talkworking/edit_tarefa.png)
 
-![Quadro de kanban](https://github.com/leonardoprg/talkworking/tree/master/public/talkworking/kanban.png)
+![Quadro de kanban](https://raw.github.com/leonardoprg/talkworking/master/public/talkworking/kanban.png)
 
 Contribuindo
 ============
