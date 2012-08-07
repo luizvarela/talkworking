@@ -1,23 +1,15 @@
-Talkworking é um projeto simples, para gerenciamento de tarefas, através de TODO list ou KANBAN.
+Bem vindo ao Talkworking
+========================
 
-Open-Source e escrito em Ruby on Rails atualmente esta hospedado em:
+>Talkworking é um gerenciador de tarefas, focado em ser simples e objetivo, fazendo com que controlar tarefas não seja algo cansativo ou chato.
 
-talkworking.herokuapp.com
+>Escrito em * Ruby on Rails: http://rubyonrails.com
 
-e grátis tbm :D
+e sendo open source está atualmente hospedado em *talkworking.herokuapp.com: http://talkworking.herokuapp.com
 
+Contribuindo
+============
 
-para quem quiser colaborar com o projeto fique a vontade, bastar clonar - codificar - pull request e bla bla bla...
+> Para contribuir com o talkworking é necessário fazer o clone do repositório, e enviar um e-mail para *leonardo.prg@gmail.com: mailto:leonardo.prg@gmail.com
 
-as tarefas que ainda estão para ser desenvolvidas no projeto, estão no proprio projeto
-
-basta enviar um e-mail para 
-
-leonardo.prg@gmail.com
-
-para que eu possa convidá-lo a participar do projeto no talkworking.
-
-em breve postarei as especificações do projeto.
-
-
-Um abraço xD
+Isto é necessário pois as tarefas do projeto estão cadastradas no próprio talkworing, e é preciso adicionar o acesso ao projeto talkworking.
