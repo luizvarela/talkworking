@@ -18,10 +18,10 @@ class User < ActiveRecord::Base
     has_many :comments
     has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
       :storage => :s3,
-        :bucket => :talkworking,
+        :bucket => ENV['S3_BUCKET_NAME'],
         :s3_credentials => {
-          :access_key_id => "AKIAIPRGGSYW3VAZHR3A",
-          :secret_access_key => "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"
+          :access_key_id     => ENV['AWS_ACCESS_KEY_ID'],
+          :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
         }
     #FILTERS
     before_save :encrypt_new_password
