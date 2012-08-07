@@ -27,15 +27,7 @@ Especificações
 
 > E para o seu layout foi usado o bootstrap (http://twitter.github.com/bootstrap/)
 
-> ![Tela de login](https://raw.github.com/leonardoprg/talkworking/master/public/talkworking/login.png)
-
-> ![Meus Projetos](https://raw.github.com/leonardoprg/talkworking/master/public/talkworking/projetos.png)
-
-> ![Gerencia projeto](https://raw.github.com/leonardoprg/talkworking/master/public/talkworking/show_projeto.png)
-
-> ![Editar tarefa](https://raw.github.com/leonardoprg/talkworking/master/public/talkworking/edit_tarefa.png)
-
-> ![Quadro de kanban](https://raw.github.com/leonardoprg/talkworking/master/public/talkworking/kanban.png)
+> Os testes atualmente estão escritos a API padrão do Rails, porém já há uma tarefa associado ao projeto para ser migrado os testes para RSPEC.
 
 Contribuindo
 ============
@@ -44,3 +36,22 @@ Contribuindo
 > Para contribuir com o talkworking é necessário fazer o clone do repositório, e enviar um e-mail para leonardo.prg@gmail.com,
 
 > isto é necessário pois as tarefas do projeto estão cadastradas no próprio talkworing, e é preciso adicionar o acesso ao projeto talkworking.
+
+Imagens
+==============
+....................................................................................................................................
+
+
+> ![Tela de login](https://raw.github.com/leonardoprg/talkworking/master/public/talkworking/login.png)
+
+
+> ![Meus Projetos](https://raw.github.com/leonardoprg/talkworking/master/public/talkworking/projetos.png)
+
+
+> ![Gerencia projeto](https://raw.github.com/leonardoprg/talkworking/master/public/talkworking/show_projeto.png)
+
+
+> ![Editar tarefa](https://raw.github.com/leonardoprg/talkworking/master/public/talkworking/edit_tarefa.png)
+
+
+> ![Quadro de kanban](https://raw.github.com/leonardoprg/talkworking/master/public/talkworking/kanban.png)
