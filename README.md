@@ -10,7 +10,10 @@ Especificações
 ==============
 ....................................................................................................................................
 
-> Talkworking é composto pela seguinte estrutura:
+> Por estar hospedado no heroku o talkworing usa o banco de dados postgres,  mas caso você queira contribuir com o projeto, fique a vontade para usar o banco que se sentir  mais a vontade, só cuidado ao commitar o arquivo database.yml.
+
+
+> O talkworking é composto pela seguinte estrutura:
 
 * - Usuário
 * - Comentário
@@ -24,7 +27,7 @@ Especificações
 
 > E para o seu layout foi usado o bootstrap (http://twitter.github.com/bootstrap/)
 
-
+![Tela de login](/public/talkworking/login.png)
 
 Contribuindo
 ============
