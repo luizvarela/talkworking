@@ -33,9 +33,13 @@ Contribuindo
 ============
 ***
 
-Para contribuir com o talkworking é necessário criar um fork do repositório, e enviar um e-mail para leonardo.prg@gmail.com,
+A idéia do projeto, não é ser pago, chato ou qualquer coisa assim, a idéia é criar uma ferramenta para gerenciamento de tarefas, focado em agilidade, simplicidade e que deixe nosso dia-a-dia mais fácil e divertido, não queremos uma ferramenta do tamanho do JIRA ou então tão complexa quanto o qualitor, não precisamos disso, particularmente, detestamos elas...
+
+Então se quiser contribuir com o talkworking é necessário criar um fork do repositório, e enviar um e-mail para leonardo.prg@gmail.com,
 
 isto é necessário pois as tarefas do projeto estão cadastradas no próprio talkworing, e é preciso adicionar o acesso ao projeto talkworking.
+
+Um grande abraço.
 
 Imagens
 ==============
