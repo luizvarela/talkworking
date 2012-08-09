@@ -49,3 +49,4 @@ gem "paperclip", "~> 3.0"
 gem 'aws-s3'
 gem 'aws-sdk'
 #gem 'rspec'
+#gem "github_api"
