@@ -48,5 +48,6 @@ gem 'gritter'
 gem "paperclip", "~> 3.0"
 gem 'aws-s3'
 gem 'aws-sdk'
+gem 'normalize-rails'
 #gem 'rspec'
 #gem "github_api"
