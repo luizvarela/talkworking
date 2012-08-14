@@ -38,7 +38,9 @@ pt-br:
       lists:
         task_list: esta atualmente na lista de tarefas
         scheduled_to: agendado para
-        current_status: e seu status atual é
+        current_status: o seu status atual é
+        current_user: associado à
+        any_user: nenhum usuário
       labels:
           new: Novo tipo de tarefa
           listing: Lista de tipos de tarefa
@@ -80,6 +82,8 @@ pt-br:
           is_a: é um(a)
           scheduled_to: agendado para
           current_task_list: e atualmente esta na lista de tarefas
+          current_user: associado à
+          any_user: nenhum usuário
   tasklist:
       labels:
           new: Nova lista de tarefas
@@ -97,7 +101,9 @@ pt-br:
       lists:
         is_a: é um(a)
         scheduled_to: agendado para
-        current_status: e seu status atual é
+        current_status: o seu status atual é
+        current_user: associado à
+        any_user: nenhum usuário
       breadcrumbs:
         show: visualizando lista de tarefas
   historicals:

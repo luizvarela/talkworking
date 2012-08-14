@@ -52,10 +52,10 @@
 							<span class='bold'><%=task.title%></span>
 							<span class='italic'><%=I18n.t("columns.lists.is_a")%></span>
 							<span class='bold'><%=task.task_type.title%></span>
-							<span class='italic'><%=I18n.t("columns.lists.scheduled_to")%></span>
-							<span class='bold'><%=I18n.l(task.end)%></span>
 							<span class='italic'><%=I18n.t("columns.lists.current_task_list")%></span>
 							<span class='bold'><%=task.task_list.name%></span>
+							<span class='italic'><%=I18n.t("columns.lists.current_user")%></span>
+							<span class='bold'><%=task.user.nil? ? t("columns.lists.any_user") : task.user.email%></span>
 							<span id="task-icons-columns-<%=task.id%>" class='hide'>
 								<%= link_to content_tag(:i, nil, :class=>'icon-pencil'), edit_project_task_list_task_path(@project, task.task_list, task), :remote => true%>
 								<%= link_to content_tag(:i, nil, :class=>'icon-remove'), project_task_list_task_path(@project, task.task_list, task), :remote => true, :method => :delete, :confirm => t("tasks.messages.delete")%>
