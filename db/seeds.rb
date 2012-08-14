@@ -15,5 +15,5 @@ TaskType.delete_all
 User.delete_all
 
 
-User.create(:email => 'leonardo.prg@gmail.com', :password => '23571113')
+User.create(:email => 'admin@admin.com', :password => '123456')
 User.create(:email => 'guest@guest.com', :password => 'guest')

@@ -4,14 +4,11 @@ class ProjectsController < ApplicationController
   respond_to :html, :js
   add_breadcrumb I18n.t("projects.breadcrumbs.index"), :root_path
   add_breadcrumb I18n.t("projects.breadcrumbs.show"), :project_path, :except => [:index, :new, :create]
-  # GET /projects
-  # GET /projects.json
+ 
   def index
     @projects = current_user.projects.all
   end
 
-  # GET /projects/1
-  # GET /projects/1.json
   def show
     begin
       @project = current_user.projects.find(params[:id])
@@ -21,13 +18,12 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # GET /projects/new
-  # GET /projects/new.json
+
   def new
     @project = current_user.projects.new
   end
 
-  # GET /projects/1/edit
+ 
   def edit
     begin
       @project = current_user.projects.find(params[:id])
@@ -37,8 +33,7 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # POST /projects
-  # POST /projects.json
+ 
   def create
     @project = Project.new(params[:project])
 
@@ -77,8 +72,7 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # PUT /projects/1
-  # PUT /projects/1.json
+  
   def update
     @project = current_user.projects.find(params[:id])
 
@@ -91,8 +85,7 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # DELETE /projects/1
-  # DELETE /projects/1.json
+ 
   def destroy
     begin
       @project = current_user.projects.find(params[:id])
@@ -109,13 +102,12 @@ class ProjectsController < ApplicationController
     end
   end
   
-  # KANBAN /projects/1
   def kanban
     begin
       @project = current_user.projects.find(params[:id])
 
       @task_list = @project.task_lists.find(params[:task_list_id]) if !params[:task_list_id].nil? 
-      #@task_list = @project.task_lists.last if @task_list.nil?
+      @task_list = @project.task_lists.last if @task_list.nil?
 
       @user = @project.users.find(params[:user_id]) if !params[:user_id].nil?
 
