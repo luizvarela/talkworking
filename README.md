@@ -45,11 +45,6 @@ Imagens
 ==============
 ***
 
-
-![Tela de login](https://raw.github.com/leonardoprg/talkworking/master/public/talkworking/login.png)
-
-***
-
 ![Meus Projetos](https://raw.github.com/leonardoprg/talkworking/master/public/talkworking/projetos.png)
 
 ***
