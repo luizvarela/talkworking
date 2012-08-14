@@ -35,9 +35,20 @@ Contribuindo
 
 A idéia do projeto, não é ser pago, chato ou qualquer coisa assim, a idéia é criar uma ferramenta para gerenciamento de tarefas, focado em agilidade, simplicidade e que deixe nosso dia-a-dia mais fácil e divertido, não queremos uma ferramenta do tamanho do JIRA ou então tão complexa quanto o qualitor, não precisamos disso, particularmente, detestamos elas...
 
-Então se quiser contribuir com o talkworking é necessário criar um fork do repositório.
+Então se quiser contribuir com o talkworking é necessário criar um fork do repositório e executar os comandos:
+	- bundle install
+	- rake db:create
+	- rake db:migrate
+	- rake db:seed
+
+	credenciais:
+		admin@admin.com
+		123456
+
+**Você precisará mudar o banco de dados usados, caso utilize um diferente do postgres**
 
 As tarefas são gerenciadas tanto pelo http://talkworking.herokuapp.com quanto por issues do github, você usar o github para gerenciar as tarefas, ou então usar o próprio talkworking, caso a ultima opção seja a sua escolha, mande um e-mail para talkworking@gmail.com, que iremos convidá-lo a participar do projeto.
+
 
 Um grande abraço.
 
