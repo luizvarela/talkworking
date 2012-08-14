@@ -147,6 +147,7 @@ pt-br:
       fields:
           logout: Sair
           view_all: Ver todos
+          search: Pesquisar
       menus:
           projects: Projetos
           historicals: Histórico geral

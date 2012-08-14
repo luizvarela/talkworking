@@ -1,5 +1,7 @@
 Talkworking::Application.routes.draw do
   
+  post "search/index"
+
   resources :suggestions
 
   resources :comments

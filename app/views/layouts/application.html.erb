@@ -21,6 +21,9 @@
 					<a href="<%=new_suggestion_path%>"><%=I18n.t("system.menus.suggestions")%></a>
 				</li>
               </ul>
+			  	<%= form_tag(search_index_path, :class => "navbar-search", :remote => true) do %>
+				   <input type="text" placeholder="<%=t('system.fields.search')%>" class="search-query span2" name='search'>
+	            <% end %>
 			  <div class="btn-group pull-right">
 			      <a href="#" data-toggle="dropdown" class="btn dropdown-toggle">
 	              <i class="icon-user"></i>
