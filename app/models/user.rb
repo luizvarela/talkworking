@@ -49,7 +49,6 @@ class User < ActiveRecord::Base
     protected
       def encrypt_new_password
         return if password.blank?
-        puts "-------------------> #{password} <---------------------------"
         self.hashed_password = encrypt(password)
       end
       
