@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
         }
     #FILTERS
     before_save :encrypt_new_password
-    before_save :set_to_active
+    before_create :set_to_active
 
     def set_to_active
       self.active = 1

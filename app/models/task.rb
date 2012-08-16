@@ -14,7 +14,7 @@ class Task < ActiveRecord::Base
   validates :end, :date => { :after_or_equal_to => Proc.new { Time.now.to_date } }, :on => :create
   
   #FILTER
-  before_save :set_to_active
+  before_create :set_to_active
   
   def set_to_active
     self.active = 1

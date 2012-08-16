@@ -11,7 +11,7 @@ class Project < ActiveRecord::Base
   has_many :historical, :as => :historical
   
   #FILTER
-  before_save :set_to_active
+  before_create :set_to_active
   
   #SCOPE
   default_scope where("active = 1")

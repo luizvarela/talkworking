@@ -14,7 +14,7 @@ class TaskList < ActiveRecord::Base
   validates :end_date, :date => { :after_or_equal_to => Proc.new { Time.now.to_date } }
   
   #FILTER
-  before_save :set_to_active
+  before_create :set_to_active
   
   def set_to_active
     self.active = 1

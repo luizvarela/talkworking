@@ -75,19 +75,19 @@ class ColumnsController < ApplicationController
       redirect_to projects_path, :notice => I18n.t("system.messages.access_denied")
     end
   end
-
-  # DELETE /columns/1
-  # DELETE /columns/1.json
+  
   def destroy
     @column = @project.columns.find(params[:id])
     tasks = @column.tasks
+    logger.info "tasks === #{tasks.count}"
     if @project.columns.count == 0
-      redirect_to project_path, :alert => I18n.t("system.messages.delete_columns.error_no_columns")
+      redirect_to project_path, :alert => I18n.t("system.messages.delete_columns.error_no_columns") and return
     end
-    @project.columns.where("id != #{@column.id}").first.tasks << tasks if !tasks.empty?
     
     @column.update_attributes(:active => 0)
 
+    @project.columns.where("id != #{@column.id}").first.tasks << tasks if !tasks.empty?
+    
     respond_to do |format|
       format.html { redirect_to projects_path }
       format.js {render 'projects/create_column'}

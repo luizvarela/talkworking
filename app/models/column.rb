@@ -1,5 +1,5 @@
 class Column < ActiveRecord::Base
-  attr_accessible :color, :order, :project_id, :title
+  attr_accessible :color, :order, :project_id, :title, :active
   
   #ASSOCIATIONS
   belongs_to :project
@@ -10,7 +10,7 @@ class Column < ActiveRecord::Base
   validates :color, :format => {:with => /^\#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/ }
   
   #FILTER
-  before_save :set_to_active
+  before_create :set_to_active
   
   #SCOPE
   default_scope where("active = 1")
